@@ -1,0 +1,18 @@
+
+output :
+
+Customer{name='rushi', member=true, memberType='Platinum'}
+Customer{name='suraj', member=false, memberType='Diamond'}
+Visit{customer name=rushi, customer member=true, customer member type=Platinum, serviceExpense=2000.0, productExpense=1000.0}
+Visit{customer name=suraj, customer member=false, customer member type=Diamond, serviceExpense=1000.0, productExpense=1000.0}
+Total bill  made by rushi = 2580.0
+Total bill  made by suraj = 1790.0
+
+sql table:
+
+CREATE TABLE  EdTexCustomer(int cus_id NOT NULL AUTO_INCREMENT PRIMARY KEY,varchar(20) name NOT NULL, varchar(10) member,varchar(10) memberType);
+
+CREATE TABLE CustomerVisit(int cusvisit_id NOT NULL AUTO_INCREMENT PRIMARY KEY, decimal(19,4) serviceExpense, decimal(19,4) productExpense);
+
+CREATE TABLE Discount(int dis_id NOT NULL AUTO_INCREMENT PRIMARY KEY, decimal(19,4) serviceDiscountPlatinum,decimal(19,4) serviceDiscountDiamond, decimal(19,4)productDiscountPlatinum
+, decimal(19,4) productDiscountDiamond);
